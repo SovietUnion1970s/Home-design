@@ -73,6 +73,7 @@ const Home: React.FC = () => {
         <Swiper
           modules={[Autoplay, EffectFade, Pagination]}
           effect="fade"
+          fadeEffect={{ crossFade: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true, zIndex: 50 }}
           loop

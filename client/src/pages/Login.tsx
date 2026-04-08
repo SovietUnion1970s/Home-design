@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
-import { 
-  LogIn, 
-  Mail, 
-  Lock, 
+import {
+  LogIn,
+  Mail,
+  Lock,
   ArrowLeft,
   Loader2
 } from 'lucide-react';
@@ -59,7 +59,16 @@ const Login: React.FC = () => {
             Tiếp tục với Google
           </button>
           <button className="social-btn">
-            <img src="https://www.svgrepo.com/show/303114/facebook-3.svg" alt="FB" style={{ width: 18 }} />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#1877F2"
+              style={{ marginRight: '8px' }}
+            >
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
             Tiếp tục với Facebook
           </button>
 
@@ -92,8 +101,8 @@ const Login: React.FC = () => {
 
             <div className="prop-row" style={{ marginBottom: 24 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                 <label className="prop-label">MẬT KHẨU</label>
-                 <Link to="/" style={{ fontSize: 11, color: 'var(--purple)' }}>Quên mật khẩu?</Link>
+                <label className="prop-label">MẬT KHẨU</label>
+                <Link to="/" style={{ fontSize: 11, color: 'var(--purple)' }}>Quên mật khẩu?</Link>
               </div>
               <div style={{ position: 'relative' }}>
                 <Lock size={14} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-3)' }} />
