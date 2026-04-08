@@ -1,0 +1,69 @@
+{
+  "samples": [
+    {
+      "id": "template-1",
+      "name": "Luxury Studio 1BR",
+      "description": "Căn hộ Studio hiện đại với không gian mở và nội thất gỗ sồi.",
+      "thumbnail": "/modern_studio_3d_render_1775626129515.png",
+      "thumbColor": "#7c3aed",
+      "designData": {
+        "walls": [
+          {"id": "w1", "start": {"x": 2, "y": 2}, "end": {"x": 8, "y": 2}, "thickness": 0.15, "height": 2.8},
+          {"id": "w2", "start": {"x": 8, "y": 2}, "end": {"x": 8, "y": 8}, "thickness": 0.15, "height": 2.8},
+          {"id": "w3", "start": {"x": 8, "y": 8}, "end": {"x": 2, "y": 8}, "thickness": 0.15, "height": 2.8},
+          {"id": "w4", "start": {"x": 2, "y": 8}, "end": {"x": 2, "y": 2}, "thickness": 0.15, "height": 2.8}
+        ],
+        "furniture": [
+          {"id": "f1", "type": "sofa", "label": "Sofa Phòng Khách", "position": [4, 0, 3], "rotation": [0, 0, 0], "scale": [1.5, 1, 1], "color": "#7c3aed"},
+          {"id": "f2", "type": "bed", "label": "Giường Ngủ", "position": [6, 0, 6], "rotation": [0, 1.57, 0], "scale": [1, 1, 1], "color": "#0d9488"}
+        ],
+        "sceneMaterial": {
+          "floor": "wood"
+        }
+      }
+    },
+    {
+      "id": "template-2",
+      "name": "Minimalist Office",
+      "description": "Không gian làm việc tối giản, tập trung vào ánh sáng tự nhiên.",
+      "thumbnail": "/minimalist_office_3d_render_1775626167280.png",
+      "thumbColor": "#0d9488",
+      "designData": {
+        "walls": [
+          {"id": "w1", "start": {"x": 3, "y": 3}, "end": {"x": 7, "y": 3}, "thickness": 0.15, "height": 3},
+          {"id": "w2", "start": {"x": 7, "y": 3}, "end": {"x": 7, "y": 7}, "thickness": 0.15, "height": 3},
+          {"id": "w3", "start": {"x": 7, "y": 7}, "end": {"x": 3, "y": 7}, "thickness": 0.15, "height": 3},
+          {"id": "w4", "start": {"x": 3, "y": 7}, "end": {"x": 3, "y": 3}, "thickness": 0.15, "height": 3}
+        ],
+        "furniture": [
+          {"id": "f1", "type": "desk", "label": "Bàn Làm Việc", "position": [5, 0, 4], "rotation": [0, 0, 0], "scale": [1, 1, 1], "color": "#115e59"}
+        ],
+        "sceneMaterial": {
+          "floor": "concrete"
+        }
+      }
+    },
+    {
+      "id": "template-3",
+      "name": "Cozy Bedroom Modern",
+      "description": "Phòng ngủ ấm cúng với tông màu trung tính và ban công kính.",
+      "thumbnail": "/luxury_bedroom_3d_render_1775626151395.png",
+      "thumbColor": "#2563eb",
+      "designData": {
+        "walls": [
+          {"id": "w1", "start": {"x": 1, "y": 1}, "end": {"x": 6, "y": 1}, "thickness": 0.15, "height": 2.5},
+          {"id": "w2", "start": {"x": 6, "y": 1}, "end": {"x": 6, "y": 6}, "thickness": 0.15, "height": 2.5},
+          {"id": "w3", "start": {"x": 6, "y": 6}, "end": {"x": 1, "y": 6}, "thickness": 0.15, "height": 2.5},
+          {"id": "w4", "start": {"x": 1, "y": 6}, "end": {"x": 1, "y": 1}, "thickness": 0.15, "height": 2.5}
+        ],
+        "furniture": [
+          {"id": "f1", "type": "bed", "label": "Giường Premium", "position": [3.5, 0, 3.5], "rotation": [0, 0, 0], "scale": [1.2, 1, 1.2], "color": "#0d9488"},
+          {"id": "f2", "type": "wardrobe", "label": "Tủ Gỗ", "position": [1.5, 0, 2], "rotation": [0, 1.57, 0], "scale": [1, 1, 1], "color": "#0f766e"}
+        ],
+        "sceneMaterial": {
+          "floor": "marble"
+        }
+      }
+    }
+  ]
+}
