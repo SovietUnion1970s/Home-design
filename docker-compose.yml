@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: homedesign_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: homedesign
+    ports:
+      - "5433:5432"
+    volumes:
+      - homedesign_db_data:/var/lib/postgresql/data
+    networks:
+      - homedesign_network
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: homedesign_server
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./server/.env
+    depends_on:
+      - db
+    networks:
+      - homedesign_network
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: homedesign_client
+    ports:
+      - "5173:5173"
+    depends_on:
+      - server
+    networks:
+      - homedesign_network
+
+volumes:
+  homedesign_db_data:
+
+networks:
+  homedesign_network:
+    driver: bridge

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sofa_01",
+    "name": "Ghế Sofa (Sheen Chair)",
+    "type": "sofa",
+    "url": "/models/sofa_01.glb",
+    "scale": [2, 2, 2],
+    "keywords": ["SheenChair", "Living Room"]
+  },
+  {
+    "id": "bed_01",
+    "name": "Mô Hình Nhà Phố (Tokyo)",
+    "type": "bed",
+    "url": "/models/house_01.glb",
+    "scale": [0.015, 0.015, 0.015],
+    "keywords": ["LittlestTokyo", "Room", "Modular House Kit"]
+  },
+  {
+    "id": "coffee_table_01",
+    "name": "Loa Cassette",
+    "type": "coffee-table",
+    "url": "/models/boombox_01.glb",
+    "scale": [60, 60, 60],
+    "keywords": ["Boombox", "Props"]
+  }
+]

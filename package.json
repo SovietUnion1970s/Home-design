@@ -1,0 +1,13 @@
+{
+  "name": "homedesign-root",
+  "version": "1.0.0",
+  "description": "AI-Powered 3D Home Designer Monorepo",
+  "scripts": {
+    "dev": "npm run start:dev",
+    "start:dev": "docker-compose up -d db && npx concurrently \"cd server && npm run start:dev\" \"cd client && npm run dev\" -c \"bgBlue.bold,bgMagenta.bold\" -n \"NEST,VITE\" --success first && echo \"\n\n\n ---> FRONTEND IS RUNNING AT: http://localhost:5173/ <--- \n\n\n\"",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
