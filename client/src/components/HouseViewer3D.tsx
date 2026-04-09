@@ -65,22 +65,105 @@ const GLBModel: React.FC<{ url: string }> = ({ url }) => {
   return <primitive object={cloned}/>;
 };
 
-// ─── Generic Fallback Box ─────────────────────────────────────
+// ─── Generic Fallback Box (styled per furniture type) ────────
 function GenericBox({ color, type }: { color: string; type: string }) {
   const dims: Record<string, [number, number, number]> = {
-    sofa: [2, 0.8, 0.9], chair: [0.6, 0.8, 0.6], bed: [1.6, 0.6, 2],
-    wardrobe: [1.2, 2.1, 0.6], 'coffee-table': [1.2, 0.45, 0.7],
-    desk: [1.2, 0.75, 0.6], plant: [0.4, 1.2, 0.4],
-    door: [0.9, 2.2, 0.08], window: [1.2, 1.4, 0.06], default: [1, 1, 1],
+    sofa:          [2, 0.65, 0.9],
+    chair:         [0.6, 0.8,  0.6],
+    bed:           [1.8, 0.3,  2.0],
+    wardrobe:      [1.2, 2.1,  0.55],
+    'coffee-table':[1.2, 0.45, 0.7],
+    bookshelf:     [1.0, 2.0,  0.4],
+    desk:          [1.2, 0.75, 0.6],
+    plant:         [0.3, 1.0,  0.3],
+    door:          [0.9, 2.2,  0.08],
+    window:        [1.2, 1.2,  0.06],
+    default:       [1,   1,    1],
   };
   const d = dims[type] || dims.default;
+
+  if (type === 'bed') {
+    return (
+      <group>
+        {/* mattress */}
+        <mesh castShadow position={[0, 0.22, 0]}>
+          <boxGeometry args={[d[0], 0.28, d[2]]}/>
+          <meshStandardMaterial color={color} roughness={0.85} metalness={0}/>
+        </mesh>
+        {/* headboard */}
+        <mesh castShadow position={[0, 0.55, -d[2]/2 + 0.06]}>
+          <boxGeometry args={[d[0], 0.7, 0.12]}/>
+          <meshStandardMaterial color="#94a3b8" roughness={0.6}/>
+        </mesh>
+        {/* pillow L */}
+        <mesh castShadow position={[-d[0]/4, 0.42, -d[2]/2 + 0.35]}>
+          <boxGeometry args={[0.6, 0.14, 0.4]}/>
+          <meshStandardMaterial color="#f1f5f9" roughness={1}/>
+        </mesh>
+        {/* pillow R */}
+        <mesh castShadow position={[d[0]/4, 0.42, -d[2]/2 + 0.35]}>
+          <boxGeometry args={[0.6, 0.14, 0.4]}/>
+          <meshStandardMaterial color="#f1f5f9" roughness={1}/>
+        </mesh>
+      </group>
+    );
+  }
+
+  if (type === 'sofa') {
+    return (
+      <group>
+        {/* seat */}
+        <mesh castShadow position={[0, 0.28, 0]}>
+          <boxGeometry args={[d[0], 0.3, 0.7]}/>
+          <meshStandardMaterial color={color} roughness={0.9}/>
+        </mesh>
+        {/* back */}
+        <mesh castShadow position={[0, 0.65, -0.3]}>
+          <boxGeometry args={[d[0], 0.7, 0.22]}/>
+          <meshStandardMaterial color={color} roughness={0.9}/>
+        </mesh>
+        {/* arm L */}
+        <mesh castShadow position={[-d[0]/2 + 0.12, 0.4, 0]}>
+          <boxGeometry args={[0.22, 0.55, 0.8]}/>
+          <meshStandardMaterial color={color} roughness={0.9}/>
+        </mesh>
+        {/* arm R */}
+        <mesh castShadow position={[d[0]/2 - 0.12, 0.4, 0]}>
+          <boxGeometry args={[0.22, 0.55, 0.8]}/>
+          <meshStandardMaterial color={color} roughness={0.9}/>
+        </mesh>
+      </group>
+    );
+  }
+
+  if (type === 'bookshelf') {
+    return (
+      <group>
+        {/* frame */}
+        <mesh castShadow position={[0, d[1]/2, 0]}>
+          <boxGeometry args={[d[0], d[1], d[2]]}/>
+          <meshStandardMaterial color={color} roughness={0.75} metalness={0.05} wireframe={false}/>
+        </mesh>
+        {/* shelves */}
+        {[0.5, 1.0, 1.5].map((y, i) => (
+          <mesh key={i} castShadow position={[0, y, 0]}>
+            <boxGeometry args={[d[0] - 0.06, 0.04, d[2] - 0.04]}/>
+            <meshStandardMaterial color="#cbd5e1" roughness={0.8}/>
+          </mesh>
+        ))}
+      </group>
+    );
+  }
+
+  // default fallback
   return (
     <mesh castShadow position={[0, d[1]/2, 0]}>
       <boxGeometry args={d}/>
-      <meshStandardMaterial color={color} roughness={0.6} metalness={0.05}/>
+      <meshStandardMaterial color={color} roughness={0.65} metalness={0.05}/>
     </mesh>
   );
 }
+
 
 // ─── Floor ───────────────────────────────────────────────────
 const SceneFloor: React.FC = () => {

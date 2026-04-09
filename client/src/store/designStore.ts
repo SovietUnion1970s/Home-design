@@ -133,15 +133,15 @@ export const useDesignStore = create<DesignState>((set, get) => ({
     
     if (type === 'bedroom') {
       f = [
-        { id: 'bed1', type: 'bed', label: 'Giường Đôi', assetUrl: 'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/bed/model.gltf', position: [2.5, 0, 1.5], rotation: [0, 0, 0], scale: [1.5, 1.5, 1.5], color: '#bfdbfe' },
-        { id: 'wardrobe1', type: 'wardrobe', label: 'Tủ Quần Áo', assetUrl: '', position: [4.5, 0, 3], rotation: [0, -Math.PI/2, 0], scale: [1.2, 2.1, 0.6], color: '#e2e8f0' },
-        { id: 'plant1', type: 'plant', label: 'Cây Monstera', assetUrl: 'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/plant/model.gltf', position: [0.5, 0, 0.5], rotation: [0, 0, 0], scale: [1.5, 1.5, 1.5], color: '#16a34a' }
+        { id: 'bed1',      type: 'bed',      label: 'Giường Đôi',  assetUrl: '', position: [2.5, 0, 1.5], rotation: [0, 0, 0],          scale: [1.8, 0.6, 2.0], color: '#bfdbfe' },
+        { id: 'wardrobe1', type: 'wardrobe', label: 'Tủ Quần Áo', assetUrl: '', position: [4.5, 0, 3.0], rotation: [0, -Math.PI/2, 0],  scale: [1.2, 2.1, 0.6], color: '#e2e8f0' },
+        { id: 'plant1',    type: 'plant',    label: 'Cây Cảnh',    assetUrl: 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@r173/examples/models/gltf/Parrot.glb', position: [0.5, 0, 0.5], rotation: [0, 0, 0], scale: [0.09, 0.09, 0.09], color: '#16a34a' }
       ];
     } else if (type === 'living') {
       f = [
-        { id: 'sofa1', type: 'sofa', label: 'Sofa Nhung', assetUrl: 'https://modelviewer.dev/shared-assets/models/sheen-chair.glb', position: [2.5, 0, 2], rotation: [0, Math.PI, 0], scale: [1.5, 1.5, 1.5], color: '#7c6b5a' },
-        { id: 'table1', type: 'coffee-table', label: 'Bàn Trà', assetUrl: 'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/table-round/model.gltf', position: [2.5, 0, 3], rotation: [0, 0, 0], scale: [1.2, 1.2, 1.2], color: '#6b4e2a' },
-        { id: 'bookshelf1', type: 'bookshelf', label: 'Kệ Sách', assetUrl: 'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/bookshelf/model.gltf', position: [0.5, 0, 2], rotation: [0, Math.PI/2, 0], scale: [1.2, 1.2, 1.2], color: '#8B5E3C' }
+        { id: 'sofa1',      type: 'sofa',         label: 'Sofa',        assetUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb', position: [2.5, 0, 2.0], rotation: [0, Math.PI, 0], scale: [1, 1, 1], color: '#7c6b5a' },
+        { id: 'table1',     type: 'coffee-table', label: 'Bàn Trà',     assetUrl: '', position: [2.5, 0, 3.0], rotation: [0, 0, 0], scale: [1.2, 0.45, 0.7], color: '#6b4e2a' },
+        { id: 'bookshelf1', type: 'bookshelf',    label: 'Kệ Sách',     assetUrl: '', position: [0.4, 0, 2.0], rotation: [0, Math.PI/2, 0], scale: [1.2, 2.0, 0.4], color: '#8B5E3C' }
       ];
     }
     
